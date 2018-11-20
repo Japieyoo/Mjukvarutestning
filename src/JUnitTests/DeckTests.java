@@ -10,7 +10,7 @@ import model.Deck;
 
 class DeckTests {
 	@Test
-	public void Constructor_FullDeck_ShouldReturnADeckWith52Cards() {
+	public void Constructor_FullDeck_ShouldReturnADeckWith52StubCards() {
 		DeckFactory factory = new DeckFactory();
 		ArrayList<Card> stubDeck = factory.getDeck("StubFullDeck");
 		
