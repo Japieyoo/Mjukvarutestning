@@ -14,7 +14,7 @@ class CardTests {
 	}
 
 	@Test
-	public void Constructor_Int_ShouldNotThrow() {
+	public void Constructor_IntUnder13_ShouldNotThrow() {
 		boolean thrown = true;
 		try {
 			setUp(1);
