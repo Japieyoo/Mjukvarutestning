@@ -8,4 +8,8 @@ public class Deck {
 	public Deck(ArrayList<Card> deckArray) {
 		this.deckArray = deckArray;
 	}
+
+	public int getSize() {
+		return 52;
+	}
 }
