@@ -1,7 +1,7 @@
 package model;
 
 public class Card {
-	public int value;
+	private int value;
 	
 	public Card(int i) {
 		if (i > 13 || i < 1) {
