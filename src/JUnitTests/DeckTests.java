@@ -20,4 +20,19 @@ class DeckTests {
 		int expected = 52;
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void Constructor_EmptyDeck_ShouldThrowError() {
+		DeckFactory factory = new DeckFactory();
+		ArrayList<Card> stubDeck = factory.getEmptyStubDeck();
+		boolean thrown = false;
+		
+		try {
+			Deck d = new Deck(stubDeck);
+		} catch (Exception e) {
+			thrown = true;
+		}
+
+		assertTrue(thrown);
+	}
 }
