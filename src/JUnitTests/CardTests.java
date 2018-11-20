@@ -36,4 +36,16 @@ class CardTests {
 
 		assertTrue(thrown);
 	}
+	
+	@Test
+	public void Constructor_AnIntUnder1_ShouldThrow() {
+		boolean thrown = false;
+		try {
+			setUp(0);
+		} catch (Exception e) {
+			thrown = true;
+		}
+
+		assertTrue(thrown);
+	}
 }
