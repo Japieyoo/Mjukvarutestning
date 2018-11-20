@@ -36,9 +36,9 @@ public class DeckFactory {
 	}
 
 	private class StubCard extends Card {
-		private StubCard(int i) {
+		public StubCard(int i) {
 			super(i);
-		}
 
+		}
 	}
 }

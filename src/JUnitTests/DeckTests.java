@@ -17,6 +17,7 @@ class DeckTests {
 	@BeforeEach
 	public void setUp() {
 		factory = new DeckFactory();
+
 	}
 
 	@Test
@@ -30,7 +31,7 @@ class DeckTests {
 	}
 
 	@Test
-	public void Constructor_EmptyDeck_ShouldThrowError() {
+	public void Constructor_CreateAnEmptyDeck_ShouldThrowError() {
 		ArrayList<Card> stubDeck = factory.getEmptyStubDeck();
 		boolean thrown = false;
 
@@ -41,5 +42,17 @@ class DeckTests {
 		}
 
 		assertTrue(thrown);
+	}
+
+	@Test
+	public void getDeck_FullDeck_ReturnIteratedDeck() {
+		ArrayList<Card> iteratedList = new ArrayList<Card>();
+		ArrayList<Card> stubDeck = factory.getFullStubDeck();
+		d = new Deck(stubDeck);
+		for (Card c : d.getDeck()) {
+			iteratedList.add(c);
+		}
+		boolean isEqual = stubDeck.equals(iteratedList);
+		assertTrue(isEqual);
 	}
 }
