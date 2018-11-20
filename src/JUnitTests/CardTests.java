@@ -17,7 +17,7 @@ class CardTests {
 	public void Constructor_IntBetween1And13_ShouldNotThrow() {
 		boolean thrown = true;
 		try {
-			setUp(1);
+			c = new Card(1);
 		} catch (Exception e) {
 			thrown = false;
 		}
@@ -29,23 +29,32 @@ class CardTests {
 	public void Constructor_AnIntOver13_ShouldThrow() {
 		boolean thrown = false;
 		try {
-			setUp(14);
+			c = new Card(14);
 		} catch (Exception e) {
 			thrown = true;
 		}
 
 		assertTrue(thrown);
 	}
-	
+
 	@Test
 	public void Constructor_AnIntUnder1_ShouldThrow() {
 		boolean thrown = false;
 		try {
-			setUp(0);
+			c = new Card(0);
 		} catch (Exception e) {
 			thrown = true;
 		}
 
 		assertTrue(thrown);
+	}
+
+	@Test
+	public void getValue_CardValue1_ShouldReturn1() {
+		c = new Card(1);
+		int actual = c.getValue();
+		int expected = 1;
+
+		assertEquals(expected, actual);
 	}
 }
