@@ -8,4 +8,8 @@ public class Card {
 		}
 	}
 
+	public int getValue() {
+		return 1;
+	}
+
 }
