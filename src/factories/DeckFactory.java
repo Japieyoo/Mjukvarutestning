@@ -9,26 +9,30 @@ public class DeckFactory {
 
 	}
 
-	public ArrayList<Card> getDeck(String s) {
-		ArrayList<Card> stubArrayList = new ArrayList<Card>();
+	public ArrayList<Card> getDeck() {
 		ArrayList<Card> cardArrayList = new ArrayList<Card>();
-		if (s.equalsIgnoreCase("StubFullDeck")) {
-			for (int i = 0; i < 4; i++) {
-				for (int j = 1; j <= 13; j++) {
-					stubArrayList.add(new StubCard(j));
-				}
-			}
-			return stubArrayList;
-		} else if (s.equalsIgnoreCase("StubEmptyDeck")) {
-			return stubArrayList;
-		} else {
-			for (int i = 0; i < 4; i++) {
-				for (int j = 1; j <= 13; j++) {
-					cardArrayList.add(new Card(j));
-				}
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 1; j <= 13; j++) {
+				cardArrayList.add(new Card(j));
 			}
 		}
 		return cardArrayList;
+	}
+
+	public ArrayList<Card> getFullStubDeck() {
+		ArrayList<Card> stubArrayList = new ArrayList<Card>();
+		for (int i = 0; i < 4; i++) {
+			for (int j = 1; j <= 13; j++) {
+				stubArrayList.add(new StubCard(j));
+			}
+		}
+		return stubArrayList;
+	}
+
+	public ArrayList<Card> getEmptyStubDeck() {
+		ArrayList<Card> stubArrayList = new ArrayList<Card>();
+		return stubArrayList;
 	}
 
 	private class StubCard extends Card {

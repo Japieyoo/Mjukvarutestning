@@ -9,16 +9,16 @@ import model.Card;
 import model.Deck;
 
 class DeckTests {
+
 	@Test
 	public void Constructor_FullDeck_ShouldReturnADeckWith52StubCards() {
 		DeckFactory factory = new DeckFactory();
-		ArrayList<Card> stubDeck = factory.getDeck("StubFullDeck");
-		
+		ArrayList<Card> stubDeck = factory.getFullStubDeck();
+
 		Deck d = new Deck(stubDeck);
 		int actual = d.deckArray.size();
 		int expected = 52;
-		
+
 		assertEquals(expected, actual);
 	}
-
 }
