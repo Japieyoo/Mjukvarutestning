@@ -10,6 +10,6 @@ public class Deck {
 	}
 
 	public int getSize() {
-		return 52;
+		return deckArray.size();
 	}
 }
