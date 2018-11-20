@@ -53,4 +53,13 @@ class CardTests {
 
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void getValue_CardValue2_ShouldReturn2() {
+		c = new Card(2);
+		int actual = c.getValue();
+		int expected = 2;
+
+		assertEquals(expected, actual);
+	}
 }
