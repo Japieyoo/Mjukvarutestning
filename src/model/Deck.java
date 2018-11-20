@@ -15,4 +15,8 @@ public class Deck {
 	public int getSize() {
 		return deckArray.size();
 	}
+
+	public Iterable<Card> getDeck() {
+		return deckArray;
+	}
 }
