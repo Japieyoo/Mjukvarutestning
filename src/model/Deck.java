@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class Deck {
-	public ArrayList<Card> deckArray = new ArrayList<Card>();
+	private ArrayList<Card> deckArray = new ArrayList<Card>();
 
 	public Deck(ArrayList<Card> deckArray) {
 		if (deckArray.size() != 52) {
