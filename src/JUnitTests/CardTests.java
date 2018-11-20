@@ -9,10 +9,6 @@ import model.Card;
 class CardTests {
 	Card c;
 
-	private void setUp(int i) {
-		c = new Card(i);
-	}
-
 	@Test
 	public void Constructor_IntBetween1And13_ShouldNotThrow() {
 		boolean thrown = true;
