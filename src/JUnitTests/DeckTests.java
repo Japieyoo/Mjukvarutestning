@@ -21,4 +21,15 @@ class DeckTests {
 
 		assertEquals(expected, actual);
 	}
+
+	@Test
+	public void getSize_FullDeck_ReturnSize52() {
+		DeckFactory factory = new DeckFactory();
+		ArrayList<Card> stubDeck = factory.getFullStubDeck();
+
+		Deck d = new Deck(stubDeck);
+		int actual = d.getSize();
+		int expected = 52;
+		assertEquals(expected, actual);
+	}
 }
