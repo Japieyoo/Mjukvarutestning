@@ -55,6 +55,14 @@ class DeckTests {
 		assertTrue(isEqual);
 	}
 
+	@Test
+	public void DrawCard_CheckDeckSizeDecrease_Return51() {
+		d.drawCard();
+		int expected = 51;
+		int actual = d.getSize();
+		assertEquals(expected, actual);
+	}
+
 	private class StubCard extends Card {
 		public StubCard(int i) {
 			super(i);
