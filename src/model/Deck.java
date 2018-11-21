@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
 	private ArrayList<Card> deckArray = new ArrayList<Card>();
@@ -22,6 +23,11 @@ public class Deck {
 
 	public Card drawCard() {
 		return deckArray.remove(0);
+
+	}
+
+	public void shuffle() {
+		Collections.shuffle(deckArray);
 
 	}
 }

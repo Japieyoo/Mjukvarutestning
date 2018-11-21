@@ -39,7 +39,7 @@ class DeckTests {
 	}
 
 	@Test
-	public void Shuffle_CallingCollections_Verify() {
+	public void Shuffle_CallingShuffle_Verify() {
 		Deck d = mock(Deck.class);
 		d.shuffle();
 		verify(d).shuffle();
