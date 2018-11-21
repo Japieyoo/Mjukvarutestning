@@ -17,4 +17,9 @@ public class Player {
 		return count;
 	}
 
+	public void count() {
+		count++;
+
+	}
+
 }
