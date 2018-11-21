@@ -43,10 +43,42 @@ class DeckTests {
 		Deck SUT = mock(Deck.class);
 		SUT.shuffle();
 		verify(SUT).shuffle();
+	}
+
+	@Test
+	public void Shuffle_100000Times_AtMostOneFail() {
+		int[] unshuffled13Cards = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
+		Deck SUT = new Deck(getFullStubDeck());
+		double samePrePostOrder = 0;
+		double loopTimes = 100000;
+		boolean acceptedRatio = false;
+
+		for (int i = 0; i < loopTimes; i++) {
+			SUT = new Deck(getFullStubDeck());
+			for (int j = 0; j < 39; j++) { // Draws 39 cards from the deck, leaving 13 unique cards (value 1-13).
+				SUT.drawCard();
+			}
+			SUT.shuffle();
+			int count = 0;
+			int sameSpot = 0;
+			for (Card c : SUT.getDeck()) {
+				if (c.getValue() == unshuffled13Cards[count++]) {
+					sameSpot++;
+				}
+			}
+			if (sameSpot == 13) {
+				samePrePostOrder++;
+			}
+		}
+
+		if (samePrePostOrder <= 1) {
+			acceptedRatio = true;
+		}
+
+		assertTrue(acceptedRatio);
 
 	}
-	
-	
+
 	@Test
 	public void Constructor_CreateAnEmptyDeck_ShouldThrowError() {
 		boolean thrown = false;
@@ -98,6 +130,7 @@ class DeckTests {
 		}
 	}
 
+	// Helper-methods
 	private ArrayList<Card> getFullStubDeck() {
 		ArrayList<Card> stubArrayList = new ArrayList<Card>();
 		for (int i = 0; i < 4; i++) {
@@ -112,5 +145,4 @@ class DeckTests {
 		ArrayList<Card> stubArrayList = new ArrayList<Card>();
 		return stubArrayList;
 	}
-
 }
