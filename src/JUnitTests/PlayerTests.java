@@ -15,5 +15,15 @@ class PlayerTests {
 
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void drawCard_Once_ScoreIncreasesBy1() {
+		Player SUT = new Player();
+		SUT.drawCard();
+		int actual = SUT.getScore();
+		int expected = 1;
+
+		assertEquals(expected, actual);
+	}
 
 }

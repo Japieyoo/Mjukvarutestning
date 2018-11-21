@@ -6,4 +6,5 @@ public class Player {
 	public int getScore() {
 		return score;
 	}
+	
 }
