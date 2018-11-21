@@ -23,9 +23,9 @@ class PlayerTests {
 	}
 
 	@Test
-	public void drawCard_Once_ScoreIncreasesBy1() {
+	public void checkCard_Once_ScoreIncreasesBy1() {
 		setUpPlayer();
-		SUT.drawCard();
+		SUT.checkCard(new StubCard(1));
 		int actual = SUT.getScore();
 		int expected = 1;
 
@@ -35,7 +35,6 @@ class PlayerTests {
 	@Test
 	public void checkCard_ReturnsStubCardValue() {
 		setUpPlayer();
-		SUT.drawCard();
 		int actual = SUT.checkCard(new StubCard(1));
 		int expected = 1;
 

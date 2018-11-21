@@ -7,12 +7,8 @@ public class Player {
 		return score;
 	}
 
-	public void drawCard() {
-		score++;
-
-	}
-
 	public int checkCard(Card card) {
+		score++;
 		return card.getValue();
 	}
 
