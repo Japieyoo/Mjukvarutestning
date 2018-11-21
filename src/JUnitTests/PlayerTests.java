@@ -23,6 +23,15 @@ class PlayerTests {
 	}
 
 	@Test
+	public void getCount_WhenCreated_Has0Count() {
+		setUpPlayer();
+		int actual = SUT.getCount();
+		int expected = 0;
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
 	public void checkCard_Once_ScoreIncreasesBy1() {
 		setUpPlayer();
 		SUT.checkCard(new StubCard(1));
