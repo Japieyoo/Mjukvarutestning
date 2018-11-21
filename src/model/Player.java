@@ -12,4 +12,8 @@ public class Player {
 		return card.getValue();
 	}
 
+	public int getCount() {
+		return 0;
+	}
+
 }
