@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
+import static org.mockito.Mockito.*;
+import factories.DeckFactory;
 import model.Card;
 import model.Deck;
 
@@ -18,6 +20,13 @@ class DeckTests {
 		int actual = d.getSize();
 		int expected = 52;
 		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void getDeck_CallingFactory_Verify() {
+		DeckFactory DC = mock(DeckFactory.class);
+		DC.getDeck();
+		verify(DC).getDeck();
 	}
 
 	@Test
