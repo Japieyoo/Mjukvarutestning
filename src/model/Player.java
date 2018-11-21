@@ -12,4 +12,8 @@ public class Player {
 
 	}
 
+	public int checkCard(Card card) {
+		return card.getValue();
+	}
+
 }
