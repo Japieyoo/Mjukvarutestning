@@ -9,7 +9,7 @@ import model.Card;
 import model.Player;
 
 class PlayerTests {
-	Player SUT;
+	private Player SUT;
 
 	@BeforeEach
 	private void setUpPlayer() {
@@ -40,10 +40,10 @@ class PlayerTests {
 
 		assertEquals(expected, actual);
 	}
-	
+
 	@Test
 	public void count_FourTimes_ShouldBeResetToZeroInsteadOfFour() {
-		for(int i = 0; i < 4; i++) {
+		for (int i = 0; i < 4; i++) {
 			SUT.count();
 		}
 		int actual = SUT.getCount();
