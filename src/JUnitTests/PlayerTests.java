@@ -6,19 +6,24 @@ import org.junit.jupiter.api.Test;
 import model.Player;
 
 class PlayerTests {
+	Player SUT;
+
+	private void setUpPlayer() {
+		SUT = new Player();
+	}
 
 	@Test
 	public void getScore_WhenCreated_Has0Score() {
-		Player SUT = new Player();
+		setUpPlayer();
 		int actual = SUT.getScore();
 		int expected = 0;
 
 		assertEquals(expected, actual);
 	}
-	
+
 	@Test
 	public void drawCard_Once_ScoreIncreasesBy1() {
-		Player SUT = new Player();
+		setUpPlayer();
 		SUT.drawCard();
 		int actual = SUT.getScore();
 		int expected = 1;
