@@ -2,6 +2,7 @@ package model;
 
 public class Player {
 	private int score = 0;
+	private int count = 0;
 
 	public int getScore() {
 		return score;
@@ -13,7 +14,7 @@ public class Player {
 	}
 
 	public int getCount() {
-		return 0;
+		return count;
 	}
 
 }
