@@ -39,6 +39,15 @@ class DeckTests {
 	}
 
 	@Test
+	public void Shuffle_CallingCollections_Verify() {
+		Deck d = mock(Deck.class);
+		d.shuffle();
+		verify(d).shuffle();
+
+	}
+	
+	
+	@Test
 	public void Constructor_CreateAnEmptyDeck_ShouldThrowError() {
 		boolean thrown = false;
 
@@ -72,6 +81,16 @@ class DeckTests {
 		assertEquals(expected, actual);
 	}
 
+	@Test
+	public void DrawCard_CheckReturnType_ReturnCard() {
+		boolean instanceOfCard = false;
+		setUpDeck();
+		if (d.drawCard() instanceof Card) {
+			instanceOfCard = true;
+		}
+		assertTrue(instanceOfCard);
+	}
+
 	private class StubCard extends Card {
 		public StubCard(int i) {
 			super(i);
@@ -93,4 +112,5 @@ class DeckTests {
 		ArrayList<Card> stubArrayList = new ArrayList<Card>();
 		return stubArrayList;
 	}
+
 }
