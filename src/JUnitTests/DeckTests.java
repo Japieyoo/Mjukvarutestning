@@ -11,12 +11,21 @@ import model.Deck;
 
 class DeckTests {
 	Deck d;
+	ArrayList<Card> stubDeck;
+
+	public void setUpDeck() {
+		stubDeck = getFullStubDeck();
+		d = new Deck(stubDeck);
+	}
+
+	public void setUpEmptyDeck() {
+		stubDeck = getEmptyStubDeck();
+		d = new Deck(stubDeck);
+	}
 
 	@Test
 	public void getSize_FullDeck_Return52() {
-		ArrayList<Card> stubDeck = getFullStubDeck();
-
-		d = new Deck(stubDeck);
+		setUpDeck();
 		int actual = d.getSize();
 		int expected = 52;
 		assertEquals(expected, actual);
@@ -31,11 +40,10 @@ class DeckTests {
 
 	@Test
 	public void Constructor_CreateAnEmptyDeck_ShouldThrowError() {
-		ArrayList<Card> stubDeck = getEmptyStubDeck();
 		boolean thrown = false;
 
 		try {
-			d = new Deck(stubDeck);
+			setUpEmptyDeck();
 		} catch (Exception e) {
 			thrown = true;
 		}
@@ -46,8 +54,8 @@ class DeckTests {
 	@Test
 	public void getDeck_IteratedListIsEqualToStubDeck_ReturnTrue() {
 		ArrayList<Card> iteratedList = new ArrayList<Card>();
-		ArrayList<Card> stubDeck = getFullStubDeck();
-		d = new Deck(stubDeck);
+		setUpDeck();
+
 		for (Card c : d.getDeck()) {
 			iteratedList.add(c);
 		}
@@ -57,9 +65,7 @@ class DeckTests {
 
 	@Test
 	public void DrawCard_CheckDeckSizeDecrease_Return51() {
-		ArrayList<Card> stubDeck = getFullStubDeck();
-
-		d = new Deck(stubDeck);
+		setUpDeck();
 		d.drawCard();
 		int expected = 51;
 		int actual = d.getSize();
