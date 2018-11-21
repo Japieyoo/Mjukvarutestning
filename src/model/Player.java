@@ -18,7 +18,11 @@ public class Player {
 	}
 
 	public void count() {
-		count++;
+		if (count == 3) {
+			count = 0;
+		} else {
+			count++;
+		}
 
 	}
 
