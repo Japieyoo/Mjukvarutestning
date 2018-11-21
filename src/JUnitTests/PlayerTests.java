@@ -32,6 +32,16 @@ class PlayerTests {
 	}
 
 	@Test
+	public void count_Once_CountIncreasesBy1() {
+		setUpPlayer();
+		SUT.count();
+		int actual = SUT.getCount();
+		int expected = 1;
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
 	public void checkCard_Once_ScoreIncreasesBy1() {
 		setUpPlayer();
 		SUT.checkCard(new StubCard(1));
