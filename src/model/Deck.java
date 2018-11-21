@@ -19,4 +19,9 @@ public class Deck {
 	public Iterable<Card> getDeck() {
 		return deckArray;
 	}
+
+	public Card drawCard() {
+		return deckArray.remove(0);
+
+	}
 }

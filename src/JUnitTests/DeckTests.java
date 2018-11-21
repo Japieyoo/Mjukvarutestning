@@ -57,6 +57,9 @@ class DeckTests {
 
 	@Test
 	public void DrawCard_CheckDeckSizeDecrease_Return51() {
+		ArrayList<Card> stubDeck = getFullStubDeck();
+
+		d = new Deck(stubDeck);
 		d.drawCard();
 		int expected = 51;
 		int actual = d.getSize();
