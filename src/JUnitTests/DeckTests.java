@@ -10,23 +10,23 @@ import model.Card;
 import model.Deck;
 
 class DeckTests {
-	Deck d;
+	Deck SUT;
 	ArrayList<Card> stubDeck;
 
 	public void setUpDeck() {
 		stubDeck = getFullStubDeck();
-		d = new Deck(stubDeck);
+		SUT = new Deck(stubDeck);
 	}
 
 	public void setUpEmptyDeck() {
 		stubDeck = getEmptyStubDeck();
-		d = new Deck(stubDeck);
+		SUT = new Deck(stubDeck);
 	}
 
 	@Test
 	public void getSize_FullDeck_Return52() {
 		setUpDeck();
-		int actual = d.getSize();
+		int actual = SUT.getSize();
 		int expected = 52;
 		assertEquals(expected, actual);
 	}
@@ -40,9 +40,9 @@ class DeckTests {
 
 	@Test
 	public void Shuffle_CallingShuffle_Verify() {
-		Deck d = mock(Deck.class);
-		d.shuffle();
-		verify(d).shuffle();
+		Deck SUT = mock(Deck.class);
+		SUT.shuffle();
+		verify(SUT).shuffle();
 
 	}
 	
@@ -65,7 +65,7 @@ class DeckTests {
 		ArrayList<Card> iteratedList = new ArrayList<Card>();
 		setUpDeck();
 
-		for (Card c : d.getDeck()) {
+		for (Card c : SUT.getDeck()) {
 			iteratedList.add(c);
 		}
 		boolean isEqual = stubDeck.equals(iteratedList);
@@ -75,9 +75,9 @@ class DeckTests {
 	@Test
 	public void DrawCard_CheckDeckSizeDecrease_Return51() {
 		setUpDeck();
-		d.drawCard();
+		SUT.drawCard();
 		int expected = 51;
-		int actual = d.getSize();
+		int actual = SUT.getSize();
 		assertEquals(expected, actual);
 	}
 
@@ -85,7 +85,7 @@ class DeckTests {
 	public void DrawCard_CheckReturnType_ReturnCard() {
 		boolean instanceOfCard = false;
 		setUpDeck();
-		if (d.drawCard() instanceof Card) {
+		if (SUT.drawCard() instanceof Card) {
 			instanceOfCard = true;
 		}
 		assertTrue(instanceOfCard);
