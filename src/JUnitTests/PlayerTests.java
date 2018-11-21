@@ -3,6 +3,7 @@ package JUnitTests;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+import model.Card;
 import model.Player;
 
 class PlayerTests {
@@ -31,4 +32,25 @@ class PlayerTests {
 		assertEquals(expected, actual);
 	}
 
+	@Test
+	public void checkCard_ReturnsStubCardValue() {
+		setUpPlayer();
+		SUT.drawCard();
+		int actual = SUT.checkCard(new StubCard(1));
+		int expected = 1;
+
+		assertEquals(expected, actual);
+	}
+
+	private class StubCard extends Card {
+		public StubCard(int i) {
+			super(i);
+
+		}
+
+		@Override
+		public int getValue() {
+			return 1;
+		}
+	}
 }
