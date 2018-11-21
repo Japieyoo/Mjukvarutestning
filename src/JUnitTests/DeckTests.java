@@ -3,27 +3,16 @@ package JUnitTests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import factories.DeckFactory;
 import model.Card;
 import model.Deck;
 
 class DeckTests {
 	Deck d;
-	DeckFactory factory;
-	
-
-	@BeforeEach
-	public void setUp() {
-		factory = new DeckFactory();
-
-	}
 
 	@Test
 	public void getSize_FullDeck_Return52() {
-		ArrayList<Card> stubDeck = factory.getFullStubDeck();
+		ArrayList<Card> stubDeck = getFullStubDeck();
 
 		d = new Deck(stubDeck);
 		int actual = d.getSize();
@@ -33,7 +22,7 @@ class DeckTests {
 
 	@Test
 	public void Constructor_CreateAnEmptyDeck_ShouldThrowError() {
-		ArrayList<Card> stubDeck = factory.getEmptyStubDeck();
+		ArrayList<Card> stubDeck = getEmptyStubDeck();
 		boolean thrown = false;
 
 		try {
@@ -46,14 +35,36 @@ class DeckTests {
 	}
 
 	@Test
-	public void getDeck_FullDeck_ReturnIteratedDeck() {
+	public void getDeck_IteratedListIsEqualToStubDeck_ReturnTrue() {
 		ArrayList<Card> iteratedList = new ArrayList<Card>();
-		ArrayList<Card> stubDeck = factory.getFullStubDeck();
+		ArrayList<Card> stubDeck = getFullStubDeck();
 		d = new Deck(stubDeck);
 		for (Card c : d.getDeck()) {
 			iteratedList.add(c);
 		}
 		boolean isEqual = stubDeck.equals(iteratedList);
 		assertTrue(isEqual);
+	}
+
+	private class StubCard extends Card {
+		public StubCard(int i) {
+			super(i);
+
+		}
+	}
+
+	private ArrayList<Card> getFullStubDeck() {
+		ArrayList<Card> stubArrayList = new ArrayList<Card>();
+		for (int i = 0; i < 4; i++) {
+			for (int j = 1; j <= 13; j++) {
+				stubArrayList.add(new StubCard(j));
+			}
+		}
+		return stubArrayList;
+	}
+
+	private ArrayList<Card> getEmptyStubDeck() {
+		ArrayList<Card> stubArrayList = new ArrayList<Card>();
+		return stubArrayList;
 	}
 }

@@ -20,25 +20,4 @@ public class DeckFactory {
 		return cardArrayList;
 	}
 
-	public ArrayList<Card> getFullStubDeck() {
-		ArrayList<Card> stubArrayList = new ArrayList<Card>();
-		for (int i = 0; i < 4; i++) {
-			for (int j = 1; j <= 13; j++) {
-				stubArrayList.add(new StubCard(j));
-			}
-		}
-		return stubArrayList;
-	}
-
-	public ArrayList<Card> getEmptyStubDeck() {
-		ArrayList<Card> stubArrayList = new ArrayList<Card>();
-		return stubArrayList;
-	}
-
-	private class StubCard extends Card {
-		public StubCard(int i) {
-			super(i);
-
-		}
-	}
 }
