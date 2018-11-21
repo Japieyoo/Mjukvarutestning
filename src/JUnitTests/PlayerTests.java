@@ -42,12 +42,12 @@ class PlayerTests {
 	}
 
 	@Test
-	public void count_FourTimes_ShouldBeResetToZeroInsteadOfFour() {
+	public void count_FourTimes_ShouldBeResetToOneInsteadOfFour() {
 		for (int i = 0; i < 4; i++) {
 			SUT.count();
 		}
 		int actual = SUT.getCount();
-		int expected = 0;
+		int expected = 1;
 
 		assertEquals(expected, actual);
 	}
