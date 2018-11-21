@@ -40,6 +40,17 @@ class PlayerTests {
 
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void count_FourTimes_ShouldBeResetToZeroInsteadOfFour() {
+		for(int i = 0; i < 4; i++) {
+			SUT.count();
+		}
+		int actual = SUT.getCount();
+		int expected = 0;
+
+		assertEquals(expected, actual);
+	}
 
 	@Test
 	public void checkCard_Once_ScoreIncreasesBy1() {
