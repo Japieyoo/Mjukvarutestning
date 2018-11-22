@@ -16,6 +16,6 @@ public class Game {
 		if (p.getCount() == p.checkCard(drawnCard)) {
 			return false;
 		}
-		return false;
+		return true;
 	}
 }
