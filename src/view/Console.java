@@ -24,4 +24,9 @@ public class Console {
 		System.out.print("Card value: " + checkCard);
 
 	}
+
+	public void displayCount(int count) {
+		System.out.print("Count: " + 1);
+		
+	}
 }
