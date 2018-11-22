@@ -37,15 +37,17 @@ class ConsoleTests {
 	@Test
 	public void displayWelcomeMessage_ReturnStringWithMessage() {
 		SUT.displayWelcomeMessage();
-		String expected = "Welcome to 123!\nPress P to play.";
+		String expected = "Welcome to 123!\nPress P to play.\n";
 
 		assertEquals(expected, baos.toString());
 	}
 
 	@Test
 	public void displayLoosingMessage_ReturnStringWithMessage() {
-		SUT.displayLoosingMessage();
-		String expected = "You lost.";
+		p = mock(Player.class);
+		when(p.getScore()).thenReturn(5);
+		SUT.displayLoosingMessage(5);
+		String expected = "\nYou lost.\nYour score was 5/52";
 
 		assertEquals(expected, baos.toString());
 	}
@@ -53,7 +55,7 @@ class ConsoleTests {
 	@Test
 	public void displayWinningMessage_ReturnStringWithMessage() {
 		SUT.displayWinningMessage();
-		String expected = "You won.";
+		String expected = "\nYou won.";
 
 		assertEquals(expected, baos.toString());
 	}
@@ -63,7 +65,7 @@ class ConsoleTests {
 		p = mock(Player.class);
 		when(p.checkCard(null)).thenReturn(1);
 		SUT.displayCardValue(p.checkCard(null));
-		String expected = "Card value: " + 1;
+		String expected = " Card value: " + 1;
 
 		assertEquals(expected, baos.toString());
 	}
@@ -73,7 +75,7 @@ class ConsoleTests {
 		p = mock(Player.class);
 		when(p.getCount()).thenReturn(1);
 		SUT.displayCount(p.getCount());
-		String expected = "Count: " + 1;
+		String expected = "\nCount: " + 1;
 
 		assertEquals(expected, baos.toString());
 	}

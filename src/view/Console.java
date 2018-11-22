@@ -6,27 +6,27 @@ public class Console {
 	}
 
 	public void displayWelcomeMessage() {
-		System.out.println("Welcome to 123!\nPress P to play.");
+		System.out.print("Welcome to 123!\nPress P to play.\n");
 
 	}
 
-	public void displayLoosingMessage() {
-		System.out.println("You lost.");
+	public void displayLoosingMessage(int score) {
+		System.out.print("\nYou lost.\nYour score was " + score + "/52");
 
 	}
 
 	public void displayWinningMessage() {
-		System.out.println("You won.");
+		System.out.print("\nYou won.");
 
 	}
 
 	public void displayCardValue(int checkCard) {
-		System.out.println("Card value: " + checkCard);
+		System.out.print(" Card value: " + checkCard);
 
 	}
 
 	public void displayCount(int count) {
-		System.out.println("Count: " + count);
+		System.out.print("\nCount: " + count);
 
 	}
 }
