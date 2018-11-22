@@ -5,11 +5,18 @@ import view.Console;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.LinkedList;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 class ConsoleTests {
+
+	@AfterEach
+	public void flush() {
+		System.out.flush();
+		PrintStream old = System.out;
+		System.setOut(old);
+	}
 
 	@Test
 	public void displayWelcomeMessage_ReturnStringWithMessage() {
@@ -21,6 +28,5 @@ class ConsoleTests {
 		String expected = "Welcome to 123!\nPress P to play.";
 
 		assertEquals(expected, baos.toString());
-
 	}
 }
