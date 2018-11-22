@@ -14,4 +14,9 @@ public class Console {
 		System.out.print("You lost.");
 
 	}
+
+	public void displayWinningMessage() {
+		System.out.print("You won.");
+
+	}
 }
