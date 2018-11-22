@@ -7,9 +7,21 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class ConsoleTests {
+	Console SUT;
+	ByteArrayOutputStream baos;
+	PrintStream ps;
+
+	@BeforeEach
+	public void setup() {
+		SUT = new Console();
+		baos = new ByteArrayOutputStream();
+		ps = new PrintStream(baos);
+		System.setOut(ps);
+	}
 
 	@AfterEach
 	public void flush() {
@@ -20,22 +32,14 @@ class ConsoleTests {
 
 	@Test
 	public void displayWelcomeMessage_ReturnStringWithMessage() {
-		Console SUT = new Console();
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		PrintStream ps = new PrintStream(baos);
-		System.setOut(ps);
 		SUT.displayWelcomeMessage();
 		String expected = "Welcome to 123!\nPress P to play.";
 
 		assertEquals(expected, baos.toString());
 	}
-	
+
 	@Test
 	public void displayLoosingMessage_ReturnStringWithMessage() {
-		Console SUT = new Console();
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		PrintStream ps = new PrintStream(baos);
-		System.setOut(ps);
 		SUT.displayLoosingMessage();
 		String expected = "You lost.";
 
