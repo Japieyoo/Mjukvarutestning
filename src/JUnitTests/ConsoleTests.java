@@ -29,4 +29,16 @@ class ConsoleTests {
 
 		assertEquals(expected, baos.toString());
 	}
+	
+	@Test
+	public void displayLoosingMessage_ReturnStringWithMessage() {
+		Console SUT = new Console();
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		PrintStream ps = new PrintStream(baos);
+		System.setOut(ps);
+		SUT.displayLoosingMessage();
+		String expected = "You lost.";
+
+		assertEquals(expected, baos.toString());
+	}
 }
