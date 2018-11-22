@@ -1,7 +1,5 @@
 package model;
 
-import java.util.function.BooleanSupplier;
-
 public class Game {
 
 	private Player p;
