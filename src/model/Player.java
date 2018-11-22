@@ -3,6 +3,7 @@ package model;
 public class Player {
 	private int score = 0;
 	private int count = 0;
+	private Card latestCard = null;
 
 	public int getScore() {
 		return score;
@@ -27,6 +28,6 @@ public class Player {
 	}
 
 	public Card getLatestCard() {
-		return null;
+		return latestCard;
 	}
 }
