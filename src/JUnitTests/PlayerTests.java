@@ -23,6 +23,14 @@ class PlayerTests {
 
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void getLatestCard_WithoutHavingDrawnACard_ReturnNull() {
+		Card actual = SUT.getLatestCard();
+		Card expected = null;
+		
+		assertEquals(expected, actual);
+	}
 
 	@Test
 	public void getCount_WhenCreated_Has0Count() {
