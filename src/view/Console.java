@@ -26,7 +26,7 @@ public class Console {
 	}
 
 	public void displayCount(int count) {
-		System.out.print("Count: " + 1);
-		
+		System.out.print("Count: " + count);
+
 	}
 }
