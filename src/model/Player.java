@@ -10,6 +10,7 @@ public class Player {
 	}
 
 	public int checkCard(Card card) {
+		latestCard = card;
 		score++;
 		return card.getValue();
 	}
