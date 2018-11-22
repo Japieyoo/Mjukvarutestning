@@ -45,4 +45,12 @@ class ConsoleTests {
 
 		assertEquals(expected, baos.toString());
 	}
+	
+	@Test
+	public void displayWinningMessage_ReturnStringWithMessage() {
+		SUT.displayWinningMessage();
+		String expected = "You won.";
+
+		assertEquals(expected, baos.toString());
+	}
 }
