@@ -6,7 +6,6 @@ import view.Console;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import static org.mockito.Mockito.*;
-import javax.smartcardio.Card;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

@@ -19,4 +19,9 @@ public class Console {
 		System.out.print("You won.");
 
 	}
+
+	public void displayCardValue(int checkCard) {
+		System.out.print("Card value: " + checkCard);
+
+	}
 }
