@@ -61,6 +61,16 @@ class PlayerTests {
 	}
 
 	@Test
+	public void checkCard_UpdateLatestCard() {
+		Card c = new StubCard(1);
+		SUT.checkCard(c);
+		Card actual = SUT.getLatestCard();
+		Card expected = c;
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
 	public void checkCard_Once_ScoreIncreasesBy1() {
 		SUT.checkCard(new StubCard(1));
 		int actual = SUT.getScore();
