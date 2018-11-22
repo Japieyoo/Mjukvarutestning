@@ -4,7 +4,6 @@ public class Player {
 	private int score = 0;
 	private int count = 0;
 
-	
 	public int getScore() {
 		return score;
 	}
@@ -25,5 +24,9 @@ public class Player {
 			count++;
 		}
 
+	}
+
+	public Card getLatestCard() {
+		return null;
 	}
 }
