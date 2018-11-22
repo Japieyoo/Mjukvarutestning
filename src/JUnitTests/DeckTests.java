@@ -32,17 +32,10 @@ class DeckTests {
 	}
 
 	@Test
-	public void getDeck_CallingFactory_Verify() {
+	public void getDeck_CreateADeckWithFactory() {
 		DeckFactory DC = mock(DeckFactory.class);
-		DC.getDeck();
-		verify(DC).getDeck();
-	}
-
-	@Test
-	public void Shuffle_CallingShuffle_Verify() {
-		Deck SUT = mock(Deck.class);
-		SUT.shuffle();
-		verify(SUT).shuffle();
+		when(DC.getDeck()).thenReturn(getFullStubDeck());
+		SUT = new Deck(DC.getDeck());
 	}
 
 	@Test
