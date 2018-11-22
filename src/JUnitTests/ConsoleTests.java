@@ -13,21 +13,21 @@ import org.junit.jupiter.api.Test;
 class ConsoleTests {
 	Console SUT;
 	ByteArrayOutputStream baos;
-	PrintStream ps;
+	PrintStream testStream;
 
 	@BeforeEach
 	public void setup() {
 		SUT = new Console();
 		baos = new ByteArrayOutputStream();
-		ps = new PrintStream(baos);
-		System.setOut(ps);
+		testStream = new PrintStream(baos);
+		System.setOut(testStream);
 	}
 
 	@AfterEach
 	public void flush() {
 		System.out.flush();
-		PrintStream old = System.out;
-		System.setOut(old);
+		PrintStream oldStream = System.out;
+		System.setOut(oldStream);
 	}
 
 	@Test
@@ -45,7 +45,7 @@ class ConsoleTests {
 
 		assertEquals(expected, baos.toString());
 	}
-	
+
 	@Test
 	public void displayWinningMessage_ReturnStringWithMessage() {
 		SUT.displayWinningMessage();
