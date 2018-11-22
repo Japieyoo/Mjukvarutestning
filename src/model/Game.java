@@ -11,7 +11,7 @@ public class Game {
 		d.shuffle();
 	}
 
-	public boolean playGame(Player p, Deck d) {
+	public boolean playGame() {
 		Card drawnCard = d.drawCard();
 		p.count();
 		if (p.getCount() == p.checkCard(drawnCard)) {

@@ -5,10 +5,14 @@ import view.Console;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import static org.mockito.Mockito.*;
+import javax.smartcardio.Card;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import model.Player;
 
 class ConsoleTests {
 	Console SUT;
@@ -50,6 +54,16 @@ class ConsoleTests {
 	public void displayWinningMessage_ReturnStringWithMessage() {
 		SUT.displayWinningMessage();
 		String expected = "You won.";
+
+		assertEquals(expected, baos.toString());
+	}
+
+	@Test
+	public void displayCardCalue_ReturnMessageWithCardValue() {
+		Player p = mock(Player.class);
+		when(p.checkCard(null)).thenReturn(1);
+		SUT.displayCardValue(p.checkCard(null));
+		String expected = "Card value: " + 1;
 
 		assertEquals(expected, baos.toString());
 	}

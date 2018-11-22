@@ -27,7 +27,7 @@ class GameTests {
 		when(p.getCount()).thenReturn(1);
 		when(p.checkCard(null)).thenReturn(1);
 
-		assertFalse(g.playGame(p, d));
+		assertFalse(g.playGame());
 
 	}
 
@@ -36,7 +36,7 @@ class GameTests {
 		when(p.getCount()).thenReturn(3);
 		when(p.checkCard(null)).thenReturn(1);
 
-		assertTrue(g.playGame(p, d));
+		assertTrue(g.playGame());
 
 	}
 }
