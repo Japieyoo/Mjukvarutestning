@@ -17,6 +17,7 @@ class ConsoleTests {
 	Console SUT;
 	ByteArrayOutputStream baos;
 	PrintStream testStream;
+	Player p;
 
 	@BeforeEach
 	public void setup() {
@@ -59,7 +60,7 @@ class ConsoleTests {
 
 	@Test
 	public void displayCardCalue_ReturnMessageWithCardValue() {
-		Player p = mock(Player.class);
+		p = mock(Player.class);
 		when(p.checkCard(null)).thenReturn(1);
 		SUT.displayCardValue(p.checkCard(null));
 		String expected = "Card value: " + 1;
