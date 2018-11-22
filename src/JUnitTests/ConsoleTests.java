@@ -14,10 +14,10 @@ import org.junit.jupiter.api.Test;
 import model.Player;
 
 class ConsoleTests {
-	Console SUT;
-	ByteArrayOutputStream baos;
-	PrintStream testStream;
-	Player p;
+	private Console SUT;
+	private ByteArrayOutputStream baos;
+	private PrintStream testStream;
+	private Player p;
 
 	@BeforeEach
 	public void setup() {
@@ -67,7 +67,7 @@ class ConsoleTests {
 
 		assertEquals(expected, baos.toString());
 	}
-	
+
 	@Test
 	public void displayCount_ReturnMessageWithCount() {
 		p = mock(Player.class);
