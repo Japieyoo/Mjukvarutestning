@@ -13,6 +13,7 @@ public class Game {
 
 	public boolean playGame(Player p, Deck d) {
 		Card drawnCard = d.drawCard();
+		p.count();
 		if (p.getCount() == p.checkCard(drawnCard)) {
 			return false;
 		}
