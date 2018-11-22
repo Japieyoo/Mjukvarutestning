@@ -59,11 +59,21 @@ class ConsoleTests {
 	}
 
 	@Test
-	public void displayCardCalue_ReturnMessageWithCardValue() {
+	public void displayCardValue_ReturnMessageWithCardValue() {
 		p = mock(Player.class);
 		when(p.checkCard(null)).thenReturn(1);
 		SUT.displayCardValue(p.checkCard(null));
 		String expected = "Card value: " + 1;
+
+		assertEquals(expected, baos.toString());
+	}
+	
+	@Test
+	public void displayCount_ReturnMessageWithCount() {
+		p = mock(Player.class);
+		when(p.getCount()).thenReturn(1);
+		SUT.displayCount(p.getCount());
+		String expected = "Count: " + 1;
 
 		assertEquals(expected, baos.toString());
 	}
