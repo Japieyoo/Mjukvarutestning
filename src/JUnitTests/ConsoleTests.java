@@ -77,4 +77,14 @@ class ConsoleTests {
 
 		assertEquals(expected, baos.toString());
 	}
+	
+	@Test
+	public void displayCount_ReturnMessageWithCount2() {
+		p = mock(Player.class);
+		when(p.getCount()).thenReturn(2);
+		SUT.displayCount(p.getCount());
+		String expected = "Count: " + 2;
+
+		assertEquals(expected, baos.toString());
+	}
 }
