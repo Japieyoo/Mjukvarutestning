@@ -9,4 +9,9 @@ public class Console {
 		System.out.print("Welcome to 123!\nPress P to play.");
 
 	}
+
+	public void displayLoosingMessage() {
+		System.out.print("You lost.");
+
+	}
 }
