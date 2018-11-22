@@ -1,5 +1,7 @@
 package model;
 
+import java.util.function.BooleanSupplier;
+
 public class Game {
 
 	private Player p;
@@ -11,4 +13,11 @@ public class Game {
 		d.shuffle();
 	}
 
+	public boolean playGame(Player p, Deck d) {
+		Card drawnCard = d.drawCard();
+		if (p.getCount() == p.checkCard(drawnCard)) {
+			return false;
+		}
+		return false;
+	}
 }
